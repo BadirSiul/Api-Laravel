@@ -10,3 +10,6 @@ Route::get('/user', function (Request $request) {
 
 Route::resource('posts', PostController::class)->except(['create', 'edit']);
 
+Route::get('users/{user}/posts', [PostController::class, 'filteringResource']);
+Route::get('comments/posts/{posts}', [PostController::class, 'ListingNestedResources']);
+    
